@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText et1;
     private EditText et2;
+    private EditText et3;
     private TextView tv1;
 
     @Override
@@ -17,22 +18,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et1 = (EditText)findViewById(R.id.txt_num1);
-        et2 = (EditText)findViewById(R.id.txt_num2);
-        tv1 = (TextView) findViewById(R.id.txt_resultado);
+        et1 = (EditText)findViewById(R.id.txt_fisica);
+        et2 = (EditText)findViewById(R.id.txt_math);
+        et3 = (EditText)findViewById(R.id.txt_quimica);
+        tv1 = (TextView) findViewById(R.id.tv_estatus);
     }
 
-    // methodo que nos permite a hacer la suma
-    public void Sumar(View view) {
-        String valor1 = et1.getText().toString();
-        String valor2 = et2.getText().toString();
+    public void estatus (View view) {
+        String Math_String = et1.getText().toString();
+        String Fisica_String = et2.getText().toString();
+        String Quimica_String = et3.getText().toString();
 
-        int num1 = Integer.parseInt(valor1);
-        int num2 = Integer.parseInt(valor2);
+        int Math_int = Integer.parseInt(Math_String);
+        int Fisica_int = Integer.parseInt(Fisica_String);
+        int Quimica_int  = Integer.parseInt(Quimica_String);
 
-        int suma = num1 + num2;
+        int promedio = (Math_int + Fisica_int + Quimica_int) / 3;
 
-        String result = String.valueOf(suma);
-        tv1.setText(result);
+        if (promedio > 6 ){
+            tv1.setText("Estatus Aprobado con: " + promedio);
+
+        } else if (promedio <= 5) {
+            tv1.setText("Estatus Reaprobado: " + promedio);
+        }
     }
 }
