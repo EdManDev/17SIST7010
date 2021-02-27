@@ -42,9 +42,9 @@
         android:onClick="Calcular"
         android:text="@string/Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_resta" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/tv_resultado"
@@ -54,32 +54,17 @@
         android:text="@string/tv_Resultado"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <CheckBox
-        android:id="@+id/check_suma"
-        android:layout_width="153dp"
-        android:layout_height="42dp"
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="278dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:text="@string/check_suma"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_valor2" />
-
-    <CheckBox
-        android:id="@+id/check_resta"
-        android:layout_width="154dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/check_resta"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_suma" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

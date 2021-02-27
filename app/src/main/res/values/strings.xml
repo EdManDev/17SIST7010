@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
-    <string name="txt_valor1">Ingresa el primer Valor</string>
-    <string name="txt_valor2">Ingresa el segundo Valor</string>
-    <string name="check_suma">Suma</string>
-    <string name="check_resta">Restar</string>
+    <string name="txt_valor1">Primer Valor</string>
+    <string name="txt_valor2">Segundo Valor</string>
     <string name="Button">Calcular</string>
     <string name="tv_Resultado">Resultado</string>
 </resources>
