@@ -4,42 +4,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText et1;
-    private EditText et2;
-    private EditText et3;
+    private EditText et1, et2;
     private TextView tv1;
+    private RadioButton rb1, rb2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et1 = (EditText)findViewById(R.id.txt_fisica);
-        et2 = (EditText)findViewById(R.id.txt_math);
-        et3 = (EditText)findViewById(R.id.txt_quimica);
-        tv1 = (TextView) findViewById(R.id.tv_estatus);
+        et1 = (EditText)findViewById(R.id.txt_valor1);
+        et2 = (EditText)findViewById(R.id.txt_valor2);
+        tv1 = (TextView)findViewById(R.id.txt_resultado);
+        rb1 = (RadioButton)findViewById(R.id.rb_sumar);
+        rb2 = (RadioButton)findViewById(R.id.rb_restar);
     }
 
-    public void estatus (View view) {
-        String Math_String = et1.getText().toString();
-        String Fisica_String = et2.getText().toString();
-        String Quimica_String = et3.getText().toString();
+    // Methodo para el button calcular
+    public void Calcular (View view) {
+        String valor1_String = et1.getText().toString();
+        String valor2_String = et2.getText().toString();
 
-        int Math_int = Integer.parseInt(Math_String);
-        int Fisica_int = Integer.parseInt(Fisica_String);
-        int Quimica_int  = Integer.parseInt(Quimica_String);
+        int valor1_int = Integer.parseInt(valor1_String);
+        int valor2_int = Integer.parseInt(valor2_String);
 
-        int promedio = (Math_int + Fisica_int + Quimica_int) / 3;
-
-        if (promedio > 6 ){
-            tv1.setText("Estatus Aprobado con: " + promedio);
-
-        } else if (promedio <= 5) {
-            tv1.setText("Estatus Reaprobado: " + promedio);
+        if (rb1.isChecked() == true ) {
+            int suma = valor1_int + valor2_int;
+            String resultado = String.valueOf(suma);
+            tv1.setText(resultado);
+        } else if(rb2.isChecked() == true) {
+            int resta = valor1_int - valor2_int;
+            String resultado = String.valueOf(resta);
+            tv1.setText(resultado);
         }
     }
 }
