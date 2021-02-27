@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
-    <string name="txt_PrimeroValor">Ingresa el primer Valor</string>
-    <string name="txt_SegundoValor">Ingresa el segundo Valor</string>
-    <string name="rb1">Sumar</string>
-    <string name="rb2">Restar</string>
+    <string name="txt_Valor1">Ingresa el primer Valor</string>
+    <string name="txt_Valor2">Ingresa el segundo Valor</string>
+    <string name="rb_sumar">Sumar</string>
+    <string name="rb_restar">Restar</string>
+    <string name="rb_producto">Multiplicar</string>
+    <string name="rb_dividir">Dividir</string>
     <string name="Button">Calcular</string>
     <string name="TextView_Resultado">Resultado</string>
 </resources>
