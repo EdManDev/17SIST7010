@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
+    <string name="txt_view_String">Estatus del Alumnos</string>
+    <string name="txt_math_String">Mathematicas</string>
+    <string name="txt_Quimica_String">Quimica</string>
+    <string name="txt_Fisica_String">Fisica</string>
+    <string name="button">Evaluar</string>
+    <string name="mathematicas">Mathematicas</string>
 </resources>

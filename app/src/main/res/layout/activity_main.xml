@@ -13,36 +13,10 @@
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Estatus del Alumno"
+        android:text="@string/txt_view_String"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txt_math"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Mathematicas"
-        android:textSize="24sp"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_quimica" />
-
-    <EditText
-        android:id="@+id/txt_fisica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        android:hint="Fisica"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_math" />
 
     <EditText
         android:id="@+id/txt_quimica"
@@ -55,7 +29,39 @@
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_estatus" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_estatus"
+        tools:text="@string/txt_Quimica_String" />
+
+    <EditText
+        android:id="@+id/txt_math"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/mathematicas"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_quimica"
+        tools:text="@string/txt_math_String"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/txt_fisica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Fisica"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_math"
+        tools:text="@string/txt_Fisica_String"
+        android:autofillHints="" />
+
 
     <Button
         android:id="@+id/button"
@@ -64,7 +70,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:onClick="estatus"
-        android:text="Evaluar"
+        android:text="@string/button"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_fisica" />
