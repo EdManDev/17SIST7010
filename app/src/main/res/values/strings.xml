@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
-    <string name="txt_valor1">Primer Valor</string>
-    <string name="txt_valor2">Segundo Valor</string>
-    <string name="Button">Calcular</string>
-    <string name="tv_Resultado">Resultado</string>
+    <string name="etNombre1">Nombre</string>
+    <string name="etNombre2">Nombre</string>
+    <string name="BotonEnviar">Enviar</string>
+    <string name="BotonRegresar">Regresar</string>
 </resources>
