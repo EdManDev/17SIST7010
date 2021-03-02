@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "BD" , null, 1);
         SQLiteDatabase BD = admin.getReadableDatabase();
 
-        Cursor consulta = BD.rawQuery(
-          "SELECt * FROM puntaje WHERE score = (SELECT max(score) FROM puntaje) ", null);
+        Cursor consulta = BD.rawQuery("SELECt * FROM puntaje WHERE score = (SELECT max(score) FROM puntaje) ", null);
         if (consulta.moveToFirst()) {
             String temp_nombre = consulta.getString(0);
             String temp_score = consulta.getString(1);
