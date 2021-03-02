@@ -51,6 +51,7 @@
         android:layout_marginTop="137dp"
         android:layout_marginBottom="122dp"
         android:background="@drawable/fondoboton"
+        android:onClick="Jugar"
         android:text="@string/button"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
