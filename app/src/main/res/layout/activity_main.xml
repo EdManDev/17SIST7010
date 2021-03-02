@@ -1,38 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/globos"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView_Personaje"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="81dp"
+        app:srcCompat="@drawable/manzana" />
+
     <EditText
-        android:id="@+id/et1"
-        android:layout_width="263dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/txt_nombre"
+        android:layout_width="298dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="224dp"
+        android:background="@drawable/fondoet"
         android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
         android:hint="@string/etNombre1"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:textColor="@color/purple_700"
+        android:textColorHint="@color/purple_700"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="264dp"
-        android:layout_height="48dp"
-        android:onClick="Enviar"
-        android:text="@string/BotonEnviar"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et1"
-        app:layout_constraintVertical_bias="0.024" />
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="137dp"
+        android:layout_marginBottom="122dp"
+        android:background="@drawable/fondoboton"
+        android:text="@string/button"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView_BestScore"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/fondoet"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:maxLength="15"
+        android:textSize="18sp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
