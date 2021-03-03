@@ -33,7 +33,7 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main2__nivel2);
 
-    Toast.makeText(this, "Nivel 3 - Restas", Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "Nivel 2 - Sumas moderadas", Toast.LENGTH_SHORT).show();
 
     tv_nombre = (TextView)findViewById(R.id.textView_nombre);
     tv_score = (TextView)findViewById(R.id.textView_score);
@@ -125,27 +125,24 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
   }
 
   public void NumAleatorio(){
-    if(score <= 29){
+    if(score <= 19){
 
       numAleatorio_uno = (int) (Math.random() * 10);
       numAleatorio_dos = (int) (Math.random() * 10);
 
-      resultado = numAleatorio_uno - numAleatorio_dos;
+      resultado = numAleatorio_uno + numAleatorio_dos;
 
-      if(resultado >= 0){
 
-        for (int i = 0; i < numero.length; i++){
-          int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
-          if(numAleatorio_uno == i){
-            iv_Auno.setImageResource(id);
-          }if(numAleatorio_dos == i){
-            iv_Ados.setImageResource(id);
-          }
+      for (int i = 0; i < numero.length; i++){
+        int id = getResources().getIdentifier(numero[i], "drawable", getPackageName());
+        if(numAleatorio_uno == i){
+          iv_Auno.setImageResource(id);
+        }if(numAleatorio_dos == i){
+          iv_Ados.setImageResource(id);
         }
-
-      } else {
-        NumAleatorio();
       }
+
+
 
     }else {
       Intent intent = new Intent(this, Main2Activity_Nivel3.class);
@@ -193,9 +190,8 @@ public class Main2Activity_Nivel2 extends AppCompatActivity {
       BD.insert("puntaje", null, insertar);
       BD.close();
     }
-  }
 
-  //  Action for back Button
+  }  //  Action for back Button
   @Override
   public void onBackPressed(){
     mp.stop();
