@@ -2,7 +2,10 @@ package com.example.a17_sist_7_010;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -56,9 +59,8 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
 
     public void Comparar(View view){
         String respuesta = et_respuesta.getText().toString();
-//
         if(!respuesta.equals("")){
-//
+
             int respuesta_jugador = Integer.parseInt(respuesta);
             if(resultado == respuesta_jugador){
 
@@ -66,13 +68,13 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
                 score++;
                 tv_score.setText("Score: " + score);
                 et_respuesta.setText("");
-//                BaseDeDatos();
+               BaseDeDatos();
             }
             else {
                 mp_bad.start();
                 vidas--;
-//                BaseDeDatos();
-//
+                BaseDeDatos();
+
                 switch (vidas){
                     case 3:
                         iv_vidas.setImageResource(R.drawable.tresvidas);
@@ -96,9 +98,7 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
                 }
                 et_respuesta.setText("");
             }
-//
-//            NumAleatorio();
-//
+            NumAleatorio();
         } else {
             Toast.makeText(this, "Escribe tu respuesta", Toast.LENGTH_SHORT).show();
         }
@@ -141,10 +141,42 @@ public class Main2Activity_Nivel1 extends AppCompatActivity {
       mp.release();
     }
   }
+
+  public void BaseDeDatos(){
+    AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "BD", null, 1);
+    SQLiteDatabase BD = admin.getWritableDatabase();
+
+    Cursor consulta = BD.rawQuery("SELECT * FROM puntaje WHERE score = (SELECT max(score) FROM puntaje)", null);
+    if(consulta.moveToFirst()){
+      String temp_nombre = consulta.getString(0);
+      String temp_score = consulta.getString(1);
+
+      int bestScore = Integer.parseInt(temp_score);
+
+      if(score > bestScore){
+        ContentValues modificacion = new ContentValues();
+        modificacion.put("nombre", nombre_jugador);
+        modificacion.put("score", score);
+
+        BD.update("puntaje", modificacion, "score=" + bestScore, null);
+      }
+
+      BD.close();
+
+    } else {
+      ContentValues insertar = new ContentValues();
+
+      insertar.put("nombre", nombre_jugador);
+      insertar.put("score", score);
+
+      BD.insert("puntaje", null, insertar);
+      BD.close();
+    }
+  }
+
 //  Action for back Button
   @Override
   public void onBackPressed(){
-    Toast.makeText(this, "Welcome Back 17-SIST-7-10", Toast.LENGTH_LONG).show();
     mp.stop();
     mp.release();
   }

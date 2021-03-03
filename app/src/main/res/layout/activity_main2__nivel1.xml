@@ -90,8 +90,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="257dp"
         android:ems="10"
         android:hint="@string/et_respuesta"
         android:inputType="number" />
@@ -104,7 +104,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="233dp"
+        android:layout_marginBottom="261dp"
         android:background="@drawable/fondoboton"
         android:onClick="Comparar"
         android:text="@string/button_sumar" />
