@@ -90,8 +90,12 @@ public class MainActivity extends AppCompatActivity {
             imm.showSoftInput(et_nombre, InputMethodManager.SHOW_IMPLICIT);
         }
     }
-//    @Override
-//    public void onBackPressed(){
-//          Toast.makeText(this, "Bye 17-SIST-7-10", Toast.LENGTH_SHORT).show();
-//    }
+
+    @Override
+    public void onBackPressed(){
+        finish();
+        mp.stop();
+        mp.release();
+        Toast.makeText(this, "Bye 17-SIST-7-10", Toast.LENGTH_SHORT).show();
+    }
 }
