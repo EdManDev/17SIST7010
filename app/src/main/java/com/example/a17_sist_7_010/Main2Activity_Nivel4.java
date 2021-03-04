@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 public class Main2Activity_Nivel4 extends AppCompatActivity {
 
   private TextView tv_nombre, tv_score;
