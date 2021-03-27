@@ -6,17 +6,30 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
-  <ImageButton
-    android:id="@+id/imageButton"
+  <EditText
+    android:id="@+id/txt_web"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
-    android:onClick="TomarVideo"
+    android:ems="10"
+    android:hint="@string/txt_web"
+    android:inputType="textPersonName"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.11"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.466"
-    app:srcCompat="@drawable/encender" />
+    app:layout_constraintVertical_bias="0.027" />
 
+  <Button
+    android:id="@+id/button"
+    android:layout_width="216dp"
+    android:layout_height="43dp"
+    android:onClick="Navegar"
+    android:text="@string/ButtonIR"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.111"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txt_web"
+    app:layout_constraintVertical_bias="0.041" />
 </androidx.constraintlayout.widget.ConstraintLayout>

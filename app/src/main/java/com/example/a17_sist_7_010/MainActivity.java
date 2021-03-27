@@ -10,24 +10,24 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+  private EditText et1;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-      ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
-    }
+    et1 = (EditText)findViewById(R.id.txt_web);
   }
 
-  static final int REQUEST_VIDEO_CAPTURE = 1;
-
-  public void TomarVideo(View view) {
-    Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-    if (takeVideoIntent.resolveActivity(getPackageManager()) != null) {
-      startActivityForResult(takeVideoIntent, REQUEST_VIDEO_CAPTURE);
-    }
+  // Methodo boton ir
+  public void Navegar (View view) {
+    Intent i = new Intent(this, MainActivity2.class);
+    i.putExtra("sitioWeb", et1.getText().toString());
+    startActivity(i);
   }
 }

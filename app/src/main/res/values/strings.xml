@@ -1,15 +1,6 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
-    <string name="etNombre">Como te llamas ?</string>
-    <string name="etNombre1">Nombre</string>
-    <string name="etNombre2">Nombre</string>
-    <string name="button">Jugar</string>
-    <string name="BotonEnviar">Enviar</string>
-    <string name="BotonRegresar">Regresar</string>
-
-    <string name="et_vidas">Manzanas</string>
-    <string name="jugador_nombre">Jugador:</string>
-    <string name="total_score">Score: 0:</string>
-    <string name="button_sumar">Comprobar</string>
-    <string name="et_respuesta">Respuesta</string>
+    <string name="txt_web">ingresa el sitio web</string>
+    <string name="ButtonIR">Ir al Sitio</string>
+    <string name="ButtonCerrar">Cerrar</string>
 </resources>
