@@ -2,51 +2,69 @@ package com.example.a17_sist_7_010;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+
 public class MainActivity extends AppCompatActivity {
 
-  private EditText et_nombre, et_datos;
+  private EditText et1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    et_nombre = (EditText)findViewById(R.id.txt_nombre);
-    et_datos = (EditText)findViewById(R.id.txt_datos);
-  }
+    et1 = (EditText)findViewById(R.id.txt_bitacora);
+    String archivos [] = fileList();
 
+    if (ArchivoExist(archivos, "bitacora.txt")){
+        try {
+          InputStreamReader archivo = new InputStreamReader(openFileInput("bitacora.txt"));
+          BufferedReader br = new BufferedReader(archivo);
+          String linea = br.readLine();
+          String bitacoraCompleta = "";
 
-  //  METHODO PARA GUARDAR
-  public void Guardar(View view) {
-    String nombre = et_nombre.getText().toString();
-    String datos = et_datos.getText().toString();
+          while(linea != null) {
+            bitacoraCompleta = bitacoraCompleta + linea + "\n";
+            linea = br.readLine();
+          }
+          br.close();
+          archivo.close();
+          et1.setText(bitacoraCompleta);
+        } catch (IOException e) {
 
-    SharedPreferences preferences = getSharedPreferences("agenda", Context.MODE_PRIVATE);
-    SharedPreferences.Editor obj_editor = preferences.edit();
-    obj_editor.putString(nombre, datos);
-    obj_editor.commit();
-
-    Toast.makeText( this,"El contacto ha sido guardado", Toast.LENGTH_SHORT).show();
-  }
-
-  //  METHODO PARA BUSCAR
-  public void Buscar (View view) {
-    String nombre = et_nombre.getText().toString();
-    SharedPreferences preferences = getSharedPreferences("agenda", Context.MODE_PRIVATE);
-    String datos = preferences.getString(nombre, "");
-
-    if (datos.length() == 0){
-      Toast.makeText(this, "no se encontro ningun registro", Toast.LENGTH_SHORT).show();
+        }
+      }
     }
-    else{
-      et_datos.setText(datos);
+
+    private boolean ArchivoExist(String archivos [], String NombreArchivo) {
+    for(int i = 0 ; i < archivos.length; i++)
+      if (NombreArchivo.equals(archivos[i]))
+        return true;
+      return false;
     }
-  }
+
+    // METHODE PARA BUTTON GUARDAR
+    public void Guardar (View view) {
+      try {
+          OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("bitacora.txt", Activity.MODE_PRIVATE));
+          archivo.write(et1.getText().toString());
+          archivo.flush();
+          archivo.close();
+
+      } catch (IOException e) {
+
+      }
+      Toast.makeText(this, "BItacora guardada correctamente", Toast.LENGTH_SHORT).show();
+      finish();
+    }
 }
