@@ -2,5 +2,7 @@
     <string name="app_name">17-SIST-7-010</string>
     <string name="txt_web">ingresa el sitio web</string>
     <string name="ButtonIR">Ir al Sitio</string>
+    <string name="txt_mail" >ingrese su email</string>
+    <string name="Button" >Guardar</string>
     <string name="ButtonCerrar">Cerrar</string>
 </resources>
