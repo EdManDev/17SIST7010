@@ -69,6 +69,7 @@
     android:layout_width="262dp"
     android:layout_height="52dp"
     android:layout_marginTop="16dp"
+    android:onClick="Modificar"
     android:text="@string/ButtonModificar"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.496"
