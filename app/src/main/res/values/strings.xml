@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">17-SIST-7-010</string>
-    <string name="txt_nombre">Nombre Del Acrchivo</string>
-    <string name="button_guardar">guardar</string>
-    <string name="button_consultar">Consultar</string>
+    <string name="txt_codigo">Codigo de producto</string>
+    <string name="txt_descripcion">Description del producto</string>
+    <string name="txt_precio">Precio del Producto</string>
+    <string name="buttonRegistrar">Registrar Producto</string>
+    <string name="ButtonBuscar">Buscar Producto</string>
+    <string name="ButtonEliminar">Eliminar Producto</string>
+    <string name="ButtonModificar">Modificar Producto</string>
 </resources>
