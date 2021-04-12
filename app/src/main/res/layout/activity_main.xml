@@ -6,147 +6,28 @@
   android:layout_height="match_parent"
   tools:context=".MainActivity">
 
+  <Button
+    android:id="@+id/button_play"
+    android:layout_width="241dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="108dp"
+    android:onClick="AudioSoundPool"
+    android:text="@string/SoundPool"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.503"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-  <ScrollView
-    android:layout_width="0dp"
-    android:layout_height="0dp"
+  <Button
+    android:id="@+id/button2"
+    android:layout_width="243dp"
+    android:layout_height="wrap_content"
+    android:onClick="AudioMediaPlayer"
+    android:text="@string/MediaPlayer"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.503"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.52">
-
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <ImageButton
-        android:id="@+id/bananas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/bananas" />
-
-      <ImageButton
-        android:id="@+id/manzana"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
-        android:baselineAligned="false"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/manzanas" />
-
-      <ImageView
-        android:id="@+id/pera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F1FF6F"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/pera" />
-
-      <ImageButton
-        android:id="@+id/cereza"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CC12FF"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/cerezas" />
-
-      <ImageButton
-        android:id="@+id/frambuesas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E91E63"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/frambuesas" />
-
-      <ImageButton
-        android:id="@+id/fresas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF2C2C"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/fresas" />
-
-      <ImageButton
-        android:id="@+id/kiwis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF5722"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/kiwis" />
-
-      <ImageButton
-        android:id="@+id/mangos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CDDC39"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/mangos" />
-
-      <ImageButton
-        android:id="@+id/melon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF7317"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/melon" />
-
-      <ImageButton
-        android:id="@+id/naranjas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ADFF4F"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/naranjas" />
-
-      <ImageButton
-        android:id="@+id/pina"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#4CAF50"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/pina" />
-
-      <ImageButton
-        android:id="@+id/sandia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF4F4F"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/sandia" />
-
-      <ImageButton
-        android:id="@+id/uvas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#8BC34A"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/uvas" />
-
-      <ImageButton
-        android:id="@+id/zarzamora"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#640088"
-        android:contentDescription="@string/description"
-        android:onClick="Selection"
-        app:srcCompat="@drawable/zarzamora" />
-    </LinearLayout>
-  </ScrollView>
+    app:layout_constraintTop_toBottomOf="@+id/button_play"
+    app:layout_constraintVertical_bias="0.084" />
 </androidx.constraintlayout.widget.ConstraintLayout>
